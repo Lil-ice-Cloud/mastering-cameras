@@ -1,73 +1,125 @@
-# React + TypeScript + Vite
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>React Three Fiber Camera Switcher</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header {
+      background: #24292e;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    main {
+      max-width: 900px;
+      margin: 20px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 2px solid #eee;
+      padding-bottom: 5px;
+      margin-top: 30px;
+    }
+    pre {
+      background: #f4f4f4;
+      padding: 10px;
+      border-radius: 5px;
+      overflow-x: auto;
+    }
+    code {
+      font-family: Consolas, monospace;
+      color: #c7254e;
+    }
+    ul {
+      margin: 10px 0;
+      padding-left: 20px;
+    }
+    .license {
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>React Three Fiber Camera Switcher 🎥</h1>
+    <p>Toggle between Perspective and Orthographic cameras with interactive controls</p>
+  </header>
+  <main>
+    <h2>🚀 Features</h2>
+    <ul>
+      <li>Switch between Perspective and Orthographic cameras</li>
+      <li>Adjust FOV (field of view) for perspective camera</li>
+      <li>Adjust Zoom for orthographic camera</li>
+      <li>OrbitControls for smooth navigation</li>
+      <li>Colorful 3D scene with sphere and cubes</li>
+    </ul>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    <h2>📦 Installation</h2>
+    <pre><code>git clone https://github.com/your-username/react-three-camera-switcher.git
+cd react-three-camera-switcher
+npm install</code></pre>
 
-Currently, two official plugins are available:
+    <h2>▶️ Usage</h2>
+    <pre><code>npm run dev</code></pre>
+    <p>Open <a href="http://localhost:5173">http://localhost:5173</a> in your browser.</p>
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+    <h2>🛠 Dependencies</h2>
+    <ul>
+      <li>React</li>
+      <li>@react-three/fiber</li>
+      <li>@react-three/drei</li>
+      <li>three</li>
+    </ul>
 
-## React Compiler
+    <h2>📂 Code Example</h2>
+    <pre><code>import { useState } from 'react'
+import { Canvas } from '@react-three/fiber'
+import { PerspectiveCamera, OrthographicCamera, OrbitControls } from '@react-three/drei'
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+function App() {
+  const [cameraType, setCameraType] = useState("perspective")
+  const [zoom, setZoom] = useState(50)
+  const [fov, setFov] = useState(50)
 
-## Expanding the ESLint configuration
+  return (
+    &lt;div style={{ height: "100vh", width:"100vw"}}&gt;
+      &lt;Canvas&gt;
+        {cameraType === "orthographic" &amp;&amp; (
+          &lt;OrthographicCamera makeDefault zoom={zoom} /&gt;
+        )}
+        {cameraType === "perspective" &amp;&amp; (
+          &lt;PerspectiveCamera makeDefault fov={fov} /&gt;
+        )}
+        &lt;OrbitControls /&gt;
+        {/* Meshes here */}
+      &lt;/Canvas&gt;
+    &lt;/div&gt;
+  )
+}
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+export default App</code></pre>
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    <div class="license">
+      <h2>📖 License</h2>
+      <p>MIT License – feel free to use and modify.</p>
+    </div>
+  </main>
+</body>
+</html>
