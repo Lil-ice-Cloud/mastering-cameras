@@ -3,58 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>React Three Fiber Camera Switcher</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
-      background: #f9f9f9;
-      color: #333;
-    }
-    header {
-      background: #24292e;
-      color: #fff;
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-    }
-    main {
-      max-width: 900px;
-      margin: 20px auto;
-      padding: 20px;
-      background: #fff;
-      border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    h2 {
-      border-bottom: 2px solid #eee;
-      padding-bottom: 5px;
-      margin-top: 30px;
-    }
-    pre {
-      background: #f4f4f4;
-      padding: 10px;
-      border-radius: 5px;
-      overflow-x: auto;
-    }
-    code {
-      font-family: Consolas, monospace;
-      color: #c7254e;
-    }
-    ul {
-      margin: 10px 0;
-      padding-left: 20px;
-    }
-    .license {
-      margin-top: 40px;
-      font-size: 0.9em;
-      color: #666;
-    }
-  </style>
+
 </head>
 <body>
   <header>
