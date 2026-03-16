@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>React Three Fiber Camera Switcher</title>
+  <h1>React Three Fiber Camera Switcher</title>
 
 </head>
 <body>
   <header>
-    <h1>React Three Fiber Camera Switcher 🎥</h1>
+    <h1> React Three Fiber Camera Switcher 🎥</h1>
     <p>Toggle between Perspective and Orthographic cameras with interactive controls</p>
   </header>
   <main>
