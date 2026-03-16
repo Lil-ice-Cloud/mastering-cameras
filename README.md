@@ -1,74 +1,79 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <h3>React Three Fiber Camera Switcher</h3>
+React Three Fiber - Camera Mastery Project
+This project is a 3D scene built using React Three Fiber (R3F) and Three.js. It demonstrates the implementation and differences between Perspective Cameras and Orthographic Cameras in a React environment.
 
-</head>
-<body>
-  <header>
-    <h1> React Three Fiber Camera Switcher 🎥</h1>
-    <p>Toggle between Perspective and Orthographic cameras with interactive controls</p>
-  </header>
-  <main>
-    <h2>🚀 Features</h2>
-    <ul>
-      <li>Switch between Perspective and Orthographic cameras</li>
-      <li>Adjust FOV (field of view) for perspective camera</li>
-      <li>Adjust Zoom for orthographic camera</li>
-      <li>OrbitControls for smooth navigation</li>
-      <li>Colorful 3D scene with sphere and cubes</li>
-    </ul>
+🚀 Features
+Canvas Setup: Implemented Canvas from @react-three/fiber 
+3D Geometry: Created a central Sphere (SphereGeometry) surrounded by multiple Cubes (BoxGeometry) 
+Lighting: Integrated AmbientLight, DirectionalLight, and PointLight for realistic rendering 
+Camera Controls:
+Perspective Camera: Demonstrates how camera angle (FOV) distorts dimensions (objects closer appear larger) 
+Orthographic Camera: Demonstrates zoom features while maintaining consistent object sizing 
+Orbit Controls: Enables users to rotate the 3D scene 
+React
+React Three Fiber (Three.js wrapper)
+@react-three/drei (Helper components)
+💻 Installation & Usage
+Clone the repository:
+bash
+git clone
 
-    <h2>📦 Installation</h2>
-    <pre><code>git clone https://github.com/your-username/react-three-camera-switcher.git
-cd react-three-camera-switcher
-npm install</code></pre>
+Install dependencies:
+bash
+npm install
 
-    <h2>▶️ Usage</h2>
-    <pre><code>npm run dev</code></pre>
-    <p>Open <a href="http://localhost:5173">http://localhost:5173</a> in your browser.</p>
+Run the project:
+bash
+npm start
 
-    <h2>🛠 Dependencies</h2>
-    <ul>
-      <li>React</li>
-      <li>@react-three/fiber</li>
-      <li>@react-three/drei</li>
-      <li>three</li>
-    </ul>
+📖 Documentation
+React Three Fiber Docs
+Drei Documentation
 
-    <h2>📂 Code Example</h2>
-    <pre><code>import { useState } from 'react'
-import { Canvas } from '@react-three/fiber'
-import { PerspectiveCamera, OrthographicCamera, OrbitControls } from '@react-three/drei'
 
-function App() {
-  const [cameraType, setCameraType] = useState("perspective")
-  const [zoom, setZoom] = useState(50)
-  const [fov, setFov] = useState(50)
+markdown
+# React Three Fiber - Camera Mastery Project
 
-  return (
-    &lt;div style={{ height: "100vh", width:"100vw"}}&gt;
-      &lt;Canvas&gt;
-        {cameraType === "orthographic" &amp;&amp; (
-          &lt;OrthographicCamera makeDefault zoom={zoom} /&gt;
-        )}
-        {cameraType === "perspective" &amp;&amp; (
-          &lt;PerspectiveCamera makeDefault fov={fov} /&gt;
-        )}
-        &lt;OrbitControls /&gt;
-        {/* Meshes here */}
-      &lt;/Canvas&gt;
-    &lt;/div&gt;
-  )
-}
+This project is a 3D scene built using **React Three Fiber (R3F)** and **Three.js**. It demonstrates the implementation and core differences between **Perspective** and **Orthographic** cameras in a React environment.
 
-export default App</code></pre>
+## 🚀 Features
 
-    <div class="license">
-      <h2>📖 License</h2>
-      <p>MIT License – feel free to use and modify.</p>
-    </div>
-  </main>
-</body>
-</html>
+*   **Canvas Setup**: Custom implementation using `@react-three/fiber`.
+*   **3D Geometry**: A central `SphereGeometry` surrounded by a 3D cross-layout of `BoxGeometry` cubes.
+*   **Lighting**: Integrated `AmbientLight`, `DirectionalLight`, and `PointLight` for realistic material rendering.
+*   **Camera Controls**:
+    *   **Perspective Camera**: Shows how Field of View (FOV) affects depth perception.
+    *   **Orthographic Camera**: Demonstrates zoom functionality while maintaining consistent object scale regardless of distance.
+    *   **Orbit Controls**: Full 360-degree scene navigation.
+
+## 🛠️ Tech Stack
+
+*   **React**
+*   **React Three Fiber** (Three.js wrapper)
+*   **@react-three/drei** (Helper components)
+
+## 💻 Installation & Usage
+
+1. **Clone the repository:**
+   ```bash
+   git clone <your-repo-link>
+Use code with caution.
+
+Install dependencies:
+bash
+npm install
+Use code with caution.
+
+Run the project:
+bash
+npm start
+Use code with caution.
+
+📖 Documentation
+React Three Fiber Docs
+Drei Documentation
+
+Do you have a **hosted demo link** (like Vercel or Netlify) that we should add to the top of the file?
+
+
+
+
