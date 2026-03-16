@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <h1>React Three Fiber Camera Switcher</title>
+  <h3>React Three Fiber Camera Switcher</h3>
 
 </head>
 <body>
